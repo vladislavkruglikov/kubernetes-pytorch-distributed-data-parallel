@@ -1,0 +1,24 @@
+services:
+  dependencies:
+    image: "how-to-create-distributed-kubernetes-task-dependencies"
+    build:
+      context: "."
+      target: "dependencies"
+
+  development:
+    image: "how-to-create-distributed-kubernetes-task-development"
+    build:
+      context: "."
+      target: "dependencies"
+    
+    tty: True
+
+    environment:
+      - TORCH_DISTRIBUTED_BACKEND=gloo
+      - TORCH_DISTRIBUTED_WORLD_SIZE=1
+      - TORCH_DISTRIBUTED_RANK=0
+      - TORCH_DISTRIBUTED_MASTER_ADDRESS=localhost
+      - TORCH_DISTRIBUTED_MASTER_PORT=8000
+
+    volumes:
+      - ./how-to-create-distributed-kubernetes-task:/opt/how-to-create-distributed-kubernetes-task
