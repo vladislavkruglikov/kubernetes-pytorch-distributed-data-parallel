@@ -25,16 +25,16 @@ inside docker
 To make kubernetes able to pull image that we build inside pod we have to upload it to our registry
 
 ```bash
-docker compose build dependencies
+docker compose build production
 
 docker login
 
-docker tag how-to-create-distributed-kubernetes-task-dependencies vladislavkruglikov/how-to-create-distributed-kubernetes-task-dependencies
+docker tag kubernetes-pytorch-distributed-data-parallel-production vladislavkruglikov/kubernetes-pytorch-distributed-data-parallel-production
 
-docker push vladislavkruglikov/how-to-create-distributed-kubernetes-task-dependencies
+docker push vladislavkruglikov/kubernetes-pytorch-distributed-data-parallel-production
 ```
 
-Just for your information docker would not allow to push tag such as vladislavkruglikov/how-to-create-distributed-kubernetes-task/dependencies so that you have to push vladislavkruglikov/how-to-create-distributed-kubernetes-task-dependencies to make it work
+Just for your information docker would not allow to push tag such as vladislavkruglikov/kubernetes-pytorch-distributed-data-parallel/production so that you have to push vladislavkruglikov/kubernetes-pytorch-distributed-data-parallel-production to make it work
 
 To specify nodes that we want to run out task on we have to first add label to local node
 

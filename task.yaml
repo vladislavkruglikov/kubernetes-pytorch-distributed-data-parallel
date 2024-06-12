@@ -29,7 +29,7 @@ stringData:
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: task88
+  name: task999
 spec:
   parallelism: 2
   completions: 2
@@ -56,15 +56,15 @@ spec:
 
       containers:
         - name: launch
-          image: vladislavkruglikov/how-to-create-distributed-kubernetes-task-dependencies:latest
+          image: vladislavkruglikov/kubernetes-pytorch-distributed-data-parallel-production:latest
           command: ["/bin/sh"]
           args: [
             "-c",
-            "sleep 10 && export TORCH_DISTRIBUTED_BACKEND=gloo && export TORCH_DISTRIBUTED_WORLD_SIZE=2 && export TORCH_DISTRIBUTED_MASTER_PORT=8000 && export TORCH_DISTRIBUTED_RANK=${JOB_COMPLETION_INDEX} && export TORCH_DISTRIBUTED_MASTER_ADDRESS=$(kubectl get pods --selector job-name=${TASK_NAME} -o jsonpath='{.items[0].status.podIP}') && python ./how-to-create-distributed-kubernetes-task/application.py"
+            "sleep 10 && export TORCH_DISTRIBUTED_BACKEND=gloo && export TORCH_DISTRIBUTED_WORLD_SIZE=2 && export TORCH_DISTRIBUTED_MASTER_PORT=8000 && export TORCH_DISTRIBUTED_RANK=${JOB_COMPLETION_INDEX} && export TORCH_DISTRIBUTED_MASTER_ADDRESS=$(kubectl get pods --selector job-name=${JOB_NAME} -o jsonpath='{.items[0].status.podIP}') && python ./source/application.py"
           ]
 
           env:
-            - name: TASK_NAME
+            - name: JOB_NAME
               valueFrom:
                 fieldRef:
                   fieldPath: metadata.labels['job-name']

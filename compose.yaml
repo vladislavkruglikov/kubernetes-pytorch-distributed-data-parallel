@@ -1,15 +1,15 @@
 services:
   dependencies:
-    image: "how-to-create-distributed-kubernetes-task-dependencies"
+    image: "kubernetes-pytorch-distributed-data-parallel-dependencies"
     build:
       context: "."
       target: "dependencies"
 
   development:
-    image: "how-to-create-distributed-kubernetes-task-development"
+    image: "kubernetes-pytorch-distributed-data-parallel-development"
     build:
       context: "."
-      target: "dependencies"
+      target: "development"
     
     tty: True
 
@@ -21,4 +21,10 @@ services:
       - TORCH_DISTRIBUTED_MASTER_PORT=8000
 
     volumes:
-      - ./how-to-create-distributed-kubernetes-task:/opt/how-to-create-distributed-kubernetes-task
+      - ./source:/opt/source
+  
+  production:
+    image: "kubernetes-pytorch-distributed-data-parallel-production"
+    build:
+      context: "."
+      target: "production"

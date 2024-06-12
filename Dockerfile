@@ -8,4 +8,8 @@ RUN echo "$(cat kubectl.sha256)  kubectl" | sha256sum --check
 RUN install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
 RUN kubectl version --client
 
-COPY ./how-to-create-distributed-kubernetes-task /opt/how-to-create-distributed-kubernetes-task
+FROM dependencies as development
+
+FROM dependencies as production
+
+COPY ./source /opt/source
