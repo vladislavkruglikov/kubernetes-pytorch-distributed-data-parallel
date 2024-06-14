@@ -13,13 +13,6 @@ services:
     
     tty: True
 
-    environment:
-      - TORCH_DISTRIBUTED_BACKEND=gloo
-      - TORCH_DISTRIBUTED_WORLD_SIZE=1
-      - TORCH_DISTRIBUTED_RANK=0
-      - TORCH_DISTRIBUTED_MASTER_ADDRESS=localhost
-      - TORCH_DISTRIBUTED_MASTER_PORT=8000
-
     volumes:
       - ./source:/opt/source
   

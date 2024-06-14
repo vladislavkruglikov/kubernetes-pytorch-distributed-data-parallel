@@ -1,0 +1,57 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: application
+spec:
+  parallelism: 2
+  completions: 2
+  completionMode: Indexed
+
+  template:
+    spec:
+      volumes:
+        - name: kubernetes
+          secret:
+            secretName: kubernetes
+
+      affinity:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+            - matchExpressions:
+              - key: cluster
+                operator: In
+                values:
+                - local
+
+      restartPolicy: Never
+
+      containers:
+        - name: launch
+          image: vladislavkruglikov/kubernetes-pytorch-distributed-data-parallel-production:latest
+          command: ["/bin/sh"]
+          args: [
+            "-c",
+            "sleep 20 && RANK=${JOB_COMPLETION_INDEX} MASTER_ADDRESS=$(kubectl get pods --selector job-name=${JOB_NAME} -o jsonpath='{.items[0].status.podIP}') python ./source/application.py"
+          ]
+
+          env:
+            - name: JOB_NAME
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.labels['job-name']
+            - name: BACKEND
+              value: "gloo"
+            - name: WORLD_SIZE
+              value: "2"
+            - name: MASTER_PORT
+              value: "8000"
+            - name: TIME_OUT
+              value: "8"
+
+          volumeMounts:
+            - name: kubernetes
+              readOnly: true
+              mountPath: "/root/.kube"
+
+  backoffLimit: 4

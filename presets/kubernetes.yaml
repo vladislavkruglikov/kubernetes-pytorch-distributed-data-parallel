@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Secret
 metadata:
-  name: kubernetes-cluster-config
+  name: kubernetes
 stringData:
   config: |
       apiVersion: v1
@@ -23,55 +23,3 @@ stringData:
         user:
           client-certificate-data: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSURRakNDQWlxZ0F3SUJBZ0lJTXFlSXVJREdVZTh3RFFZSktvWklodmNOQVFFTEJRQXdGVEVUTUJFR0ExVUUKQXhNS2EzVmlaWEp1WlhSbGN6QWVGdzB5TkRBMk1Ea3hORFF5TkRCYUZ3MHlOVEEyTURreE5EUTNOREZhTURZeApGekFWQmdOVkJBb1REbk41YzNSbGJUcHRZWE4wWlhKek1Sc3dHUVlEVlFRREV4SmtiMk5yWlhJdFptOXlMV1JsCmMydDBiM0F3Z2dFaU1BMEdDU3FHU0liM0RRRUJBUVVBQTRJQkR3QXdnZ0VLQW9JQkFRRE1aRHh6Vng1R0tid0QKQXdsOEdoSkJoSG9rSkhsYUJFaVBwQkt5YzA5cnNYNldOTEtHN1h1ZTBxdXZZUzF1T3JCSzU0UnZVQnFFMXZsOQo4WnhCUnJIZUJuMVMyejlYYlpXWEJPWWdzOW8wR0Y1NGtYRWhiZ2l1aDFHU25MVFk1ZDhrM2grL25jY29oaVJ4ClFpcVg0b2VVNmI0Y2I4UHplTzh1NmR6WHA4ZTFVUVpwaEFCNHJ3VTFkbE5Vbi9jeGdUYWsxd3VoQjN0Mk1lVEgKM0NjalEwN0F2NmZrVFQzeHhOaGRqSWV6S1pnOVJmd3p0TUlCdTNmT21SMDhwNFlHWXN6RG5wcGtTU1JobXNkZApRa2YxMWczaW94YlAyeTQxSFFuc2JEZkU4ODdNSVVYcjZ3RFF3STZEbFhocjhnOGJHb0N2dEFWUWJJK2piVml4CmthK3YydHY5QWdNQkFBR2pkVEJ6TUE0R0ExVWREd0VCL3dRRUF3SUZvREFUQmdOVkhTVUVEREFLQmdnckJnRUYKQlFjREFqQU1CZ05WSFJNQkFmOEVBakFBTUI4R0ExVWRJd1FZTUJhQUZNMXhEbk9sam5PRk9oMlZUdDBoc0VnagpUbnVwTUIwR0ExVWRFUVFXTUJTQ0VtUnZZMnRsY2kxbWIzSXRaR1Z6YTNSdmNEQU5CZ2txaGtpRzl3MEJBUXNGCkFBT0NBUUVBTTBaNURIbmdSZmhJeGM5VFdsL0piaWNvd2xkQ0RJYVFQK3l4UmtKY1dqOVlGbEFTQ2xXbGdIaDAKOXpOZVdpb1VqZCt5U0I3em9ZK1ZsT1REeW5vREF4akh5ZC9OYWFlZlFCdk1jN3J2OHg4SzdraHV6MHp5U1ZVNQpCRFU4NWxmMDhnL095OVVob2o5VE1EUURiR2d0cloyOTloWUo4UHJJNm9JNjBjdVlFUzdRc1BPU2F1Q0d3S28rClVzb3VGejV1d05wck5pbElmQUgxbWR2NkdtN0FWSXpDdHpiZ001U2ZFMndzQkNBc0QyZXpMVjJCc2FNTUlaNW4KYmlSVU1saVpvTzYxejVHU3VxMXJGVXh0STNqdWxJWXMxUW1BdHdxS0pZVzdmNnhnU3ZsUlJXNjJ5d3o5RE1tbQpMMldFbThMNXR6RnZLZjBHcitqakZvVWZleURXVHc9PQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg==
           client-key-data: LS0tLS1CRUdJTiBSU0EgUFJJVkFURSBLRVktLS0tLQpNSUlFb3dJQkFBS0NBUUVBekdROGMxY2VSaW04QXdNSmZCb1NRWVI2SkNSNVdnUklqNlFTc25OUGE3RitsalN5Cmh1MTdudEtycjJFdGJqcXdTdWVFYjFBYWhOYjVmZkdjUVVheDNnWjlVdHMvVjIyVmx3VG1JTFBhTkJoZWVKRngKSVc0SXJvZFJrcHkwMk9YZkpONGZ2NTNIS0lZa2NVSXFsK0tIbE9tK0hHL0Q4M2p2THVuYzE2Zkh0VkVHYVlRQQplSzhGTlhaVFZKLzNNWUUycE5jTG9RZDdkakhreDl3bkkwTk93TCtuNUUwOThjVFlYWXlIc3ltWVBVWDhNN1RDCkFidDN6cGtkUEtlR0JtTE13NTZhWkVra1lackhYVUpIOWRZTjRxTVd6OXN1TlIwSjdHdzN4UFBPekNGRjYrc0EKME1DT2c1VjRhL0lQR3hxQXI3UUZVR3lQbzIxWXNaR3ZyOXJiL1FJREFRQUJBb0lCQUVGdVJUdlhROFhLVG5uWQpXd3p6ZTZ5bHNFUXB1UDlzSjU1ME05Z1V1ZlFMMmk1VHFHTXhXMFc0dzJWZGdxR3JBQXk2bU5iWm1lTzB2aUhuCld0STZ3MjRFUGRKc2haYURha1B5T1lsMmlmL3JYVExUdkplckZmUnBOVi90OHFjTXo2YUp4VGdlVmtkT3loUEgKenNMWXJmYXA3VVpGTVVHY0VWVy9ZQWRabXNFY0lEblpuQXRNU1V6bnIwM1J5S0g2eGc5c1pURldqL3hZQ29kRApIMHl4WEI1U2g2dkI3ak5PckJsNkRWRTFobkROYTE5ekRkdjNkRm55Z0lpYmJkMlc3bEg4V3NSL0N3eEZkeEZCCm5mRUExK0RVRzI3YzdteGVVSHArWURXU2NjY0tNN1dHbEhvRlRCZ1lXTFJjdVNvZGJ1dGNsc3JPUTFISE43N0YKdll6Qk5iRUNnWUVBOTdHY2JSMTZSTHNGYytVaVJod1NGaFZ3aE1sKzJiaG10cjdNeDNlUE1FR29ONml1YTBQVAo5NkpsNHp5RkpJOTJia3lkdDZZanBab1NJMThRUXU2ekc1TmcrQkhwbDZ0bVE5RDUxRUZycUszTnZjZmlIcERtCkRuQ2Z3dHR2SUhlS3BySVQwWFBVcGwzZzd4RDdtNjdxNTkrTXgxMytGQVc0M3ppem9rd2VYQXNDZ1lFQTB6N2kKM2V5bXFkRVFVOGEvUXFJYmE1bkVSN1ltMmpuZFFMQk9aeVFDR3VOMVJjcGRpdEdDOS9aSHpFelQ1ZHkzb3RTMQpXK0UyNGo3OGVmTWRwblEzbitZcWNYUkY0Y3NLUVAwcklMOVFrS0FkU2NSRmJqZGM4ZWhEenh4WUlIbWlXZXZkCm1uRDF5Z1A1SnNEMGJseFhIbjFVMmY2cmF5ckhjVDkvMlNKWkpSY0NnWUJYdTN4SmxkQlIrZUJUall4WFF1Z1IKRkdUM1U1dHZxSVlSSW9ITUFRZ2hzby9QcnhxZ2ViVGhtSTc0THQ2RjlaNmdNTmtJVEh1QjA1R3JINmZWM1ZCcAphd2xFdEt1RmdqdEZ1QVpWYlJxaDgzWFZTN0JHM1ZIdk9Xc05ETVpPdktqS3BIYXFrSmw0bC9YdEY1blhLZHlnClpxa3BrSnhISVVPN0pRMVRaaHkyd3dLQmdIbDhmd2hXSXZzaWlwdERmNWNZbDJCb1RDTlp0RHBvY0wvVkpTSFgKNllZQkxkNTNKUmpDcU9sbHI2RGt4akE1b1RwNXpkc0xTSDhRN2k1TURNOC9vd1hJWHJ4a3ZCUEFxeUw0OWlhZApILzRzdHV0SGZ3NkZ0R1JDeVV5QTVvVzJyaEc4dmZNbDU1VEllQzg3Wk5kYkw1Y1BTUThka1FQTzFHaGl0bW52CmdRajlBb0dCQU1wSm5RemdlU1dFbGNLeHFYemVuSlAxQ1p4TmxOUU0xV3hBejN4NHNLbjJaZ1FoWjBLT3lEYWYKdTBKK2lKM0ZuUUFDQnl5b2VOVXYwL2plMUFHTWRJdGxHT3ROQ3hMazhaZ2FrZHU2MVhEOXZ0SHdlT0c3enlrZgpUcys3ZkxETVZ4ZlYySnJpY2Rwb1BuaWpLTVYwTVBUNVZLVG1uMGswcGhtUjQzd25tdGhaCi0tLS0tRU5EIFJTQSBQUklWQVRFIEtFWS0tLS0tCg==
-
----
-
-apiVersion: batch/v1
-kind: Job
-metadata:
-  name: task999
-spec:
-  parallelism: 2
-  completions: 2
-  completionMode: Indexed
-
-  template:
-    spec:
-      volumes:
-        - name: kubernetes-cluster-config-volume
-          secret:
-            secretName: kubernetes-cluster-config
-
-      affinity:
-        nodeAffinity:
-          requiredDuringSchedulingIgnoredDuringExecution:
-            nodeSelectorTerms:
-            - matchExpressions:
-              - key: cluster
-                operator: In
-                values:
-                - local
-
-      restartPolicy: Never
-
-      containers:
-        - name: launch
-          image: vladislavkruglikov/kubernetes-pytorch-distributed-data-parallel-production:latest
-          command: ["/bin/sh"]
-          args: [
-            "-c",
-            "sleep 10 && export TORCH_DISTRIBUTED_BACKEND=gloo && export TORCH_DISTRIBUTED_WORLD_SIZE=2 && export TORCH_DISTRIBUTED_MASTER_PORT=8000 && export TORCH_DISTRIBUTED_RANK=${JOB_COMPLETION_INDEX} && export TORCH_DISTRIBUTED_MASTER_ADDRESS=$(kubectl get pods --selector job-name=${JOB_NAME} -o jsonpath='{.items[0].status.podIP}') && python ./source/application.py"
-          ]
-
-          env:
-            - name: JOB_NAME
-              valueFrom:
-                fieldRef:
-                  fieldPath: metadata.labels['job-name']
-
-          volumeMounts:
-            - name: kubernetes-cluster-config-volume
-              readOnly: true
-              mountPath: "/root/.kube"
-
-  backoffLimit: 4
